@@ -170,7 +170,7 @@ SolutionStack=64bit Amazon Linux 2013.09 running Tomcat 7 Java 7
 DevToolsEndpoint=git.elasticbeanstalk.$APP_EB_Region.amazonaws.com
 
 EnvironmentType=$APP_EB_EnvironmentType
-#RdsEnabled=$APP_EB_RdsEnabled
+RdsEnabled=$APP_EB_RdsEnabled
 Region=$APP_EB_Region
 InstanceProfileName=$APP_EB_InstanceProfileName
 ApplicationName=$APP_EB_ApplicationName
