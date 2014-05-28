@@ -1,3 +1,5 @@
 AWS-ElasticBeanstalk-CLI-2.6.0
 AWS-ElasticBeanstalk-CLI-2.6.0.zip
 target-deployment
+/env_template.json
+*.project
