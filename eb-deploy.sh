@@ -57,6 +57,8 @@ do
      esac
 done
 
+echo $APP_AWS_ACCESS_KEY
+
 # source the properties
 . environment.properties
 
@@ -67,11 +69,7 @@ if [ -z $APP_WAR ]; then
 	usage
 	exit 1
 fi
-if [ -z $APP_AWS_ACCESS_KEY ]; then
-	echo 'aborting: -k or $APP_AWS_ACCESS_KEY not set'
-	usage
-	exit 1
-fi
+
 if [ -z $APP_AWS_SECRET_KEY ]; then
 	echo 'aborting: -s or $APP_AWS_SECRET_KEY not set'
 	usage
