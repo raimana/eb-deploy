@@ -70,11 +70,6 @@ if [ -z $APP_WAR ]; then
 	exit 1
 fi
 
-if [ -z $APP_AWS_SECRET_KEY ]; then
-	echo 'aborting: -s or $APP_AWS_SECRET_KEY not set'
-	usage
-	exit 1
-fi
 if [ -z $APP_EB_InstanceProfileName ]; then
     echo 'aborting: -p or $APP_EB_InstanceProfileName not set'
 	usage
