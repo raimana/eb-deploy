@@ -206,7 +206,7 @@ git config alias.aws.config '!git aws.elasticbeanstalk.config'
 
 # ensure eb is connected
 echo 'Attemping to connect to eb...'
-eb status --verbose
+#eb status --verbose
 
 # unzip the war file and commit it to eb local index
 echo 'Preparing Deployment Package...'
