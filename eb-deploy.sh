@@ -57,8 +57,6 @@ do
      esac
 done
 
-echo $APP_AWS_ACCESS_KEY
-
 # source the properties
 . environment.properties
 
@@ -69,7 +67,16 @@ if [ -z $APP_WAR ]; then
 	usage
 	exit 1
 fi
-
+if [ -z $APP_AWS_ACCESS_KEY ]; then
+	echo 'aborting: -k or $APP_AWS_ACCESS_KEY not set'
+	usage
+	exit 1
+fi
+if [ -z $APP_AWS_SECRET_KEY ]; then
+	echo 'aborting: -s or $APP_AWS_SECRET_KEY not set'
+	usage
+	exit 1
+fi
 if [ -z $APP_EB_InstanceProfileName ]; then
     echo 'aborting: -p or $APP_EB_InstanceProfileName not set'
 	usage
@@ -199,7 +206,7 @@ git config alias.aws.config '!git aws.elasticbeanstalk.config'
 
 # ensure eb is connected
 echo 'Attemping to connect to eb...'
-#eb status --verbose
+eb status --verbose
 
 # unzip the war file and commit it to eb local index
 echo 'Preparing Deployment Package...'
